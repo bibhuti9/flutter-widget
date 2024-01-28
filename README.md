@@ -1,18 +1,2 @@
-# flutter_application_1
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# flutter-app-1
-# flutter-widget
+## Text Span
+  <img width="160" height="320" alt="Screenshot 2024-01-28 at 12 38 35 PM" src="https://github.com/bibhuti9/flutter-widget/assets/36328136/be5d16a5-0707-492c-8f7f-af2ab0c03fa5">
