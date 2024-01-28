@@ -16,16 +16,25 @@ class _CartPageState extends State<CartPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-          child: SizedBox.fromSize(
-        size: const Size(200, 200),
-        child: const Card(
-          color: Colors.amberAccent,
-          child: Center(
-            child: Text("Hello"),
-          ),
+      body: SingleChildScrollView(
+        reverse: true,
+        child: Row(
+          children: [
+            Container(
+              height: 400,
+              color: Colors.amberAccent,
+            ),
+            Container(
+              height: 400,
+              color: Colors.blueAccent,
+            ),
+            Container(
+              height: 400,
+              color: Colors.orangeAccent,
+            ),
+          ],
         ),
-      )),
+      ),
     );
   }
 }
