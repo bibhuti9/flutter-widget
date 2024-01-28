@@ -17,27 +17,14 @@ class _CartPageState extends State<CartPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-          child: Stack(
-        alignment: Alignment.topRight,
-        clipBehavior: Clip.none,
-        children: [
-          Container(
-            height: 200,
-            width: 200,
-            color: Colors.amberAccent,
+          child: SizedBox.fromSize(
+        size: const Size(200, 200),
+        child: const Card(
+          color: Colors.amberAccent,
+          child: Center(
+            child: Text("Hello"),
           ),
-          Positioned(
-            top: -10,
-            right: -10,
-            child: Container(
-              height: 40,
-              width: 40,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(50),
-                  color: Colors.blueAccent),
-            ),
-          )
-        ],
+        ),
       )),
     );
   }
