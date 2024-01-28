@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/page/Cart/index.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -39,8 +40,32 @@ class _HomePageState extends State<HomePage> {
                 border: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.blue))),
           ),
-          const SizedBox(height: 30),
-          ElevatedButton(onPressed: () => {}, child: const Text("Login"))
+          const SizedBox(height: 10),
+          Row(
+            children: [
+              TextButton.icon(
+                icon: const Icon(Icons.delete_outline),
+                label: const Text("Clear"),
+                onPressed: () => {},
+              ),
+            ],
+          ),
+          ElevatedButton(
+              onPressed: () => {Navigator.pushNamed(context, "/cart")},
+              child: const Text("Login")),
+          const SizedBox(
+            height: 40,
+          ),
+          Text(
+            "Make your life easy with busyy. let's use it",
+            textAlign: TextAlign.start,
+            style: TextStyle(
+              fontSize: 30,
+              foreground: Paint()
+                ..color = Colors.blue
+                ..style = PaintingStyle.stroke,
+            ),
+          )
         ]),
       ),
     );
