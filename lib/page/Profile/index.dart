@@ -8,6 +8,8 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+  String image =
+      "https://images.pexels.com/photos/16812051/pexels-photo-16812051/free-photo-of-up-and-down.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load";
   @override
   void initState() {
     super.initState();
@@ -21,18 +23,17 @@ class _ProfilePageState extends State<ProfilePage> {
         title: const Text('Profile'),
       ),
       body: Center(
-        child: Container(
-          child: InteractiveViewer(
-            child: Directionality(
-              textDirection: TextDirection.rtl,
-              child: Image.network(
-                "https://images.pexels.com/photos/10549472/pexels-photo-10549472.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
-                matchTextDirection: true,
-              ),
-            ),
-          ),
-        ),
-      ),
+          child: GridView(
+        padding: const EdgeInsets.all(10),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2, mainAxisSpacing: 10, crossAxisSpacing: 10),
+        children: [
+          Image.network(image, fit: BoxFit.fill),
+          Image.network(image, fit: BoxFit.fill),
+          Image.network(image, fit: BoxFit.fill),
+          Image.network(image, fit: BoxFit.fill)
+        ],
+      )),
     );
   }
 }
