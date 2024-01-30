@@ -23,8 +23,13 @@ class _ProfilePageState extends State<ProfilePage> {
       body: Center(
         child: Container(
           child: InteractiveViewer(
-            child: Image.network(
-                "https://images.pexels.com/photos/10549472/pexels-photo-10549472.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"),
+            child: Directionality(
+              textDirection: TextDirection.rtl,
+              child: Image.network(
+                "https://images.pexels.com/photos/10549472/pexels-photo-10549472.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
+                matchTextDirection: true,
+              ),
+            ),
           ),
         ),
       ),
