@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Data/generateData.dart';
-import 'package:flutter_application_1/page/Profile/index.dart';
 
 class CartPage extends StatefulWidget {
   const CartPage({Key? key}) : super(key: key);
@@ -16,25 +15,30 @@ class _CartPageState extends State<CartPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        reverse: true,
-        child: Row(
-          children: [
-            Container(
-              height: 400,
-              color: Colors.amberAccent,
-            ),
-            Container(
-              height: 400,
-              color: Colors.blueAccent,
-            ),
-            Container(
-              height: 400,
-              color: Colors.orangeAccent,
-            ),
-          ],
-        ),
+        body: SafeArea(
+      child: ListView.separated(
+        padding: const EdgeInsets.all(10),
+        itemCount: 20,
+        separatorBuilder: (BuildContext context, index) {
+          return Container(
+            height: 10,
+          );
+        },
+        itemBuilder: (BuildContext context, index) {
+          return SizedBox(
+              height: 100,
+              child: Card(
+                child: InkWell(
+                  onTap: () {},
+                  child: const ListTile(
+                    leading: Icon(Icons.delete),
+                    title: Text("Profile"),
+                    trailing: Icon(Icons.call),
+                  ),
+                ),
+              ));
+        },
       ),
-    );
+    ));
   }
 }
