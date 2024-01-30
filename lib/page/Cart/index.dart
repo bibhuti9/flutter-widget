@@ -29,7 +29,9 @@ class _CartPageState extends State<CartPage> {
               height: 100,
               child: Card(
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamed(context, "/profile");
+                  },
                   child: const ListTile(
                     leading: Icon(Icons.delete),
                     title: Text("Profile"),

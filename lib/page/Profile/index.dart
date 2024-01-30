@@ -8,17 +8,11 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-  void getDate() async {
-    await Future.delayed(Duration(seconds: 2), () {
-      print("From getdata");
-    });
-    print("After");
-  }
-
   @override
   void initState() {
     super.initState();
-    getDate();
+    // Use link useEffeect
+    // Call any function here as constructor
   }
 
   Widget build(BuildContext context) {
@@ -28,14 +22,13 @@ class _ProfilePageState extends State<ProfilePage> {
       ),
       body: Center(
         child: Container(
-          child: ElevatedButton(
-            child: const Text("Goto Home"),
-            onPressed: () {
-              Navigator.pushNamed(context, '/');
-            },
+          child: InteractiveViewer(
+            child: Image.network(
+                "https://images.pexels.com/photos/10549472/pexels-photo-10549472.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"),
           ),
         ),
       ),
     );
   }
 }
+//https://images.pexels.com/photos/10549472/pexels-photo-10549472.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load
