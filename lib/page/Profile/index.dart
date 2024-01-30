@@ -8,12 +8,8 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-  List image = [
-    "https://images.pexels.com/photos/16812051/pexels-photo-16812051/free-photo-of-up-and-down.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
-    "https://images.pexels.com/photos/16812051/pexels-photo-16812051/free-photo-of-up-and-down.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
-    "https://images.pexels.com/photos/16812051/pexels-photo-16812051/free-photo-of-up-and-down.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
-    "https://images.pexels.com/photos/16812051/pexels-photo-16812051/free-photo-of-up-and-down.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
-  ];
+  String imageUrl =
+      "https://images.pexels.com/photos/16812051/pexels-photo-16812051/free-photo-of-up-and-down.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load";
 
   @override
   void initState() {
@@ -28,14 +24,22 @@ class _ProfilePageState extends State<ProfilePage> {
         title: const Text('Profile'),
       ),
       body: Center(
-          child: GridView.count(
-        crossAxisCount: 2,
-        crossAxisSpacing: 10,
-        mainAxisSpacing: 10,
-        children: List.generate(image.length,
-            (index) => Image.network(image[index], fit: BoxFit.fill)),
+          child: FutureBuilder(
+        future: getData(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const CircularProgressIndicator();
+          }
+          return Image.network(imageUrl);
+        },
       )),
     );
   }
+
+  Future<dynamic> getData() async {
+    String imageUrl =
+        "https://images.pexels.com/photos/16812051/pexels-photo-16812051/free-photo-of-up-and-down.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load";
+    await Future.delayed(const Duration(seconds: 3));
+    return imageUrl;
+  }
 }
-//https://images.pexels.com/photos/10549472/pexels-photo-10549472.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load
