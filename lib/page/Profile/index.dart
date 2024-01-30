@@ -8,8 +8,13 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-  String image =
-      "https://images.pexels.com/photos/16812051/pexels-photo-16812051/free-photo-of-up-and-down.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load";
+  List image = [
+    "https://images.pexels.com/photos/16812051/pexels-photo-16812051/free-photo-of-up-and-down.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
+    "https://images.pexels.com/photos/16812051/pexels-photo-16812051/free-photo-of-up-and-down.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
+    "https://images.pexels.com/photos/16812051/pexels-photo-16812051/free-photo-of-up-and-down.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
+    "https://images.pexels.com/photos/16812051/pexels-photo-16812051/free-photo-of-up-and-down.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
+  ];
+
   @override
   void initState() {
     super.initState();
@@ -23,16 +28,12 @@ class _ProfilePageState extends State<ProfilePage> {
         title: const Text('Profile'),
       ),
       body: Center(
-          child: GridView(
-        padding: const EdgeInsets.all(10),
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2, mainAxisSpacing: 10, crossAxisSpacing: 10),
-        children: [
-          Image.network(image, fit: BoxFit.fill),
-          Image.network(image, fit: BoxFit.fill),
-          Image.network(image, fit: BoxFit.fill),
-          Image.network(image, fit: BoxFit.fill)
-        ],
+          child: GridView.count(
+        crossAxisCount: 2,
+        crossAxisSpacing: 10,
+        mainAxisSpacing: 10,
+        children: List.generate(image.length,
+            (index) => Image.network(image[index], fit: BoxFit.fill)),
       )),
     );
   }
