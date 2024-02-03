@@ -16,30 +16,27 @@ class _CartPageState extends State<CartPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: SafeArea(
-      child: ListView.separated(
-        padding: const EdgeInsets.all(10),
-        itemCount: 20,
-        separatorBuilder: (BuildContext context, index) {
-          return const SizedBox(
-            height: 10,
-          );
-        },
-        itemBuilder: (BuildContext context, index) {
-          return SizedBox(
-              height: 100,
-              child: Card(
-                child: InkWell(
-                  onTap: () {
-                    Navigator.pushNamed(context, "/profile");
-                  },
-                  child: const ListTile(
-                    leading: Icon(Icons.delete),
-                    title: Text("Profile"),
-                    trailing: Icon(Icons.call),
-                  ),
-                ),
-              ));
-        },
+      child: Align(
+        child: Container(
+          constraints: const BoxConstraints.expand(),
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+              color: Colors.blueAccent,
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                    color: Colors.blue.withOpacity(0.4),
+                    spreadRadius: 1,
+                    blurRadius: 4,
+                    offset: const Offset(0, 1))
+              ]),
+          padding: const EdgeInsets.all(20),
+          margin: const EdgeInsets.all(20),
+          child: const Text(
+            "Fuck",
+            style: TextStyle(color: Colors.white, fontSize: 30),
+          ),
+        ),
       ),
     ));
   }
