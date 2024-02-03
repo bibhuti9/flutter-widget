@@ -16,25 +16,18 @@ class _CartPageState extends State<CartPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: SafeArea(
-      child: Align(
-        child: Container(
-          constraints: const BoxConstraints.expand(),
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-              color: Colors.blueAccent,
-              borderRadius: BorderRadius.circular(20),
-              boxShadow: [
-                BoxShadow(
-                    color: Colors.blue.withOpacity(0.4),
-                    spreadRadius: 1,
-                    blurRadius: 4,
-                    offset: const Offset(0, 1))
-              ]),
-          padding: const EdgeInsets.all(20),
-          margin: const EdgeInsets.all(20),
-          child: const Text(
-            "Fuck",
-            style: TextStyle(color: Colors.white, fontSize: 30),
+      child: Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(
+              maxHeight: 800, maxWidth: 400, minHeight: 300, minWidth: 200),
+          child: Container(
+            color: Colors.blueAccent,
+            child: const Text(
+              "Fuck",
+              style: TextStyle(
+                fontSize: 30,
+              ),
+            ),
           ),
         ),
       ),
