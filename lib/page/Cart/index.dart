@@ -20,7 +20,7 @@ class _CartPageState extends State<CartPage> {
         padding: const EdgeInsets.all(10),
         itemCount: 20,
         separatorBuilder: (BuildContext context, index) {
-          return Container(
+          return const SizedBox(
             height: 10,
           );
         },
