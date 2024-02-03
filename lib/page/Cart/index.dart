@@ -19,11 +19,11 @@ class _CartPageState extends State<CartPage> {
       child: Center(
         child: ConstrainedBox(
           constraints: const BoxConstraints(
-              maxHeight: 800, maxWidth: 400, minHeight: 300, minWidth: 200),
+              maxHeight: 320, maxWidth: 400, minHeight: 200, minWidth: 200),
           child: Container(
-            color: Colors.blueAccent,
+            color: Theme.of(context).colorScheme.primary,
             child: const Text(
-              "Fuck",
+              "Fuck thsis is the Fuck thsis is the Fuck thsis is the Fuck thsis is the Fuck ",
               style: TextStyle(
                 fontSize: 30,
               ),

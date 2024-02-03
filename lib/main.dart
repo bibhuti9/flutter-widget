@@ -20,7 +20,8 @@ class MyFlutterApp extends StatelessWidget {
           primaryColor: Colors.blue,
           useMaterial3: true,
           fontFamily: 'Caveat',
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue)),
+          colorScheme: ColorScheme.fromSeed(
+              seedColor: Colors.blue, primary: Colors.amberAccent)),
       home: const HomePage(),
       routes: {
         '/cart': (context) => const CartPage(),
