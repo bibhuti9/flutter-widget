@@ -20,13 +20,18 @@ class _CartPageState extends State<CartPage> {
         body: SafeArea(
       child: Column(
         children: [
-          ElevatedButton(
-            onPressed: () {},
-            child: const Text("Click"),
-            style: ElevatedButton.styleFrom(
-                primary: fuck ? Colors.amber : Colors.red,
-                elevation: 1,
-                padding: const EdgeInsets.symmetric(horizontal: 40)),
+          Container(
+            height: 60,
+            width: 200,
+            margin: const EdgeInsets.fromLTRB(0, 0, 0, 20),
+            child: ElevatedButton(
+              onPressed: () {},
+              child: const Text("Click"),
+              style: ElevatedButton.styleFrom(
+                  primary: fuck ? Colors.amber : Colors.red,
+                  elevation: 1,
+                  padding: const EdgeInsets.symmetric(horizontal: 40)),
+            ),
           ),
           InkWell(
             onTap: () {
@@ -46,7 +51,16 @@ class _CartPageState extends State<CartPage> {
                 borderRadius: BorderRadius.circular(20),
               ),
             ),
-          )
+          ),
+          ConstrainedBox(
+              constraints: const BoxConstraints(
+                  minHeight: 40, minWidth: 100, maxWidth: 300, maxHeight: 350),
+              child: TextField(
+                maxLines: null,
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10))),
+              ))
         ],
       ),
     ));
