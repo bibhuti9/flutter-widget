@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/page/Cart/index.dart';
 
-import 'package:flutter_application_1/page/Layout/layout.dart';
 import 'package:flutter_application_1/page/Profile/index.dart';
+import 'package:flutter_application_1/widgets/ConstrainedBox/index.dart';
+import 'package:flutter_application_1/widgets/FittedBox/fittedBox.dart';
+import 'package:flutter_application_1/widgets/SnackBar/index.dart';
+import 'package:flutter_application_1/widgets/Spacer/index.dart';
+import 'package:flutter_application_1/widgets/TextFeild/index.dart';
 
 void main() {
   runApp(const MyFlutterApp());
@@ -27,7 +31,7 @@ class _MyFlutterAppState extends State<MyFlutterApp> {
           fontFamily: 'Caveat',
           colorScheme: ColorScheme.fromSeed(
               seedColor: Colors.blue, primary: Colors.amberAccent)),
-      home: const Layout(),
+      home: const ConstrainedBoxWidgets(),
       routes: {
         '/cart': (context) => const CartPage(),
         '/profile': (context) => const ProfilePage(),

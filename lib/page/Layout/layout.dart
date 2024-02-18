@@ -33,7 +33,6 @@ class _Layout extends State<Layout> {
                           child: TextField(
                               keyboardType: TextInputType.number,
                               decoration: InputDecoration(
-                                  errorText: "Please enter your number",
                                   prefixIcon: Icon(Icons.contact_phone),
                                   hintText: "Enter your number",
                                   border: OutlineInputBorder(
