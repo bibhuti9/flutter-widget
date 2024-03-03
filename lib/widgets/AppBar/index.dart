@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/widgets/Button/button.dart';
+import 'package:flutter_application_1/widgets/Column/index.dart';
 
 class AppBarWidget extends StatefulWidget {
   const AppBarWidget({super.key});
@@ -20,18 +21,13 @@ class _AppBarWidgetState extends State<AppBarWidget> {
                 gradient:
                     LinearGradient(colors: [Colors.amber, Colors.orange]))),
         bottom: PreferredSize(
-          child: Row(
+          child: ButtonBar(
             children: [
-              ButtonBar(
-                alignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  ElevatedButton(
-                      onPressed: () {},
-                      child: Text("Events"),
-                      style: ButtonStyle()),
-                  ElevatedButton(onPressed: () {}, child: Text("Groups")),
-                ],
-              ),
+              ElevatedButton(
+                  onPressed: () {},
+                  child: Text("Events"),
+                  style: ButtonStyle()),
+              ElevatedButton(onPressed: () {}, child: Text("Groups")),
             ],
           ),
           preferredSize: const Size.fromHeight(100),
@@ -47,6 +43,7 @@ class _AppBarWidgetState extends State<AppBarWidget> {
           ),
         ],
       ),
+      body: const ColumnWidget(),
     );
   }
 }
