@@ -14,6 +14,7 @@ import 'package:flutter_application_1/widgets/SafeArea/index.dart';
 import 'package:flutter_application_1/widgets/SnackBar/index.dart';
 import 'package:flutter_application_1/widgets/Spacer/index.dart';
 import 'package:flutter_application_1/widgets/TextFeild/index.dart';
+import 'package:flutter_application_1/widgets/TouchInteration/AbsorbPointer/index.dart';
 
 void main() {
   runApp(const MyFlutterApp());
@@ -38,7 +39,7 @@ class _MyFlutterAppState extends State<MyFlutterApp> {
           fontFamily: 'Caveat',
           colorScheme: ColorScheme.fromSeed(
               seedColor: Colors.blue, primary: Colors.amberAccent)),
-      home: const FormWidget(),
+      home: const AbsorbPointerWidget(),
       routes: {
         '/cart': (context) => const CartPage(),
         '/profile': (context) => const ProfilePage(),
