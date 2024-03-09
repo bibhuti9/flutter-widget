@@ -8,6 +8,7 @@ import 'package:flutter_application_1/widgets/ButtonBar/index.dart';
 import 'package:flutter_application_1/widgets/ConstrainedBox/index.dart';
 import 'package:flutter_application_1/widgets/Container/index.dart';
 import 'package:flutter_application_1/widgets/FittedBox/fittedBox.dart';
+import 'package:flutter_application_1/widgets/Form/Form/index.dart';
 import 'package:flutter_application_1/widgets/Parent/index.dart';
 import 'package:flutter_application_1/widgets/SafeArea/index.dart';
 import 'package:flutter_application_1/widgets/SnackBar/index.dart';
@@ -37,7 +38,7 @@ class _MyFlutterAppState extends State<MyFlutterApp> {
           fontFamily: 'Caveat',
           colorScheme: ColorScheme.fromSeed(
               seedColor: Colors.blue, primary: Colors.amberAccent)),
-      home: const AppBarWidget(),
+      home: const FormWidget(),
       routes: {
         '/cart': (context) => const CartPage(),
         '/profile': (context) => const ProfilePage(),
